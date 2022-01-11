@@ -1,0 +1,107 @@
+import java.io.*; 
+public class game 
+{
+     public static void main(String[] args)
+         {
+             System.out.println("------------------------");
+             System.out.println("Suit Gunting Batu Kertas");
+            System.out.println("------------------------");
+             System.out.println("1. G untuk Gunting");
+             System.out.println("2. K untuk Kertas");
+             System.out.println("3. B untuk Batu");
+             System.out.println("------------------------");
+                         InputStreamReader istream = new InputStreamReader (System.in);
+             BufferedReader br = new BufferedReader (istream);
+             String input = null;
+             boolean inputvalid = false;
+             int computer = 0;
+             int player = 0;
+             while(!inputvalid)
+             {
+                 System.out.print("Tolong Suit Dengan Benar (G/K/B) = ");
+                             try
+                 {
+                     input =br.readLine();
+                 }
+                  catch (IOException ioe)
+                 {
+                     System.out.println("Error pada IO....System Shut down");
+                     System.exit(1);
+                 }
+                      if(input.length()>0);
+                      switch (input.charAt(0))
+         	       {
+                     case 'g':
+                     case 'G':
+                     player = 0;
+                     inputvalid = true;
+                     break;
+                      case 'k':
+                     case 'K':
+                     player = 1;
+                     inputvalid = true;
+                     break;
+                     case 'B':
+                     case 'b':
+                     player = 2; 
+inputvalid = true;
+                     break;
+                 }
+             }
+                     computer = (int)(Math.random()*3);
+         if (computer == 3)
+         {
+             computer = 2;
+         }
+                         switch (computer)
+             {
+                 case 0:
+                 System.out.println("Komputer = Gunting");
+                     System.out.println();             switch (player)
+             {
+                 case 0:
+                 System.out.println("Hasil = Anda Seri");
+                 break;
+                 case 1:
+                 System.out.println("Hasil = Anda Kalah");
+                 break;
+                 case 2:
+                 System.out.println("Hasil = Anda menang");
+                 break;
+             }
+                 break; 
+                case 1: 
+                System.out.println("Komputer = Kertas");
+                             System.out.println();
+             switch (player) 
+            {  
+               case 0: 
+                System.out.println("Hasil = Anda menang"); 
+                break; 
+               case 1:
+                 System.out.print("Hasil = Seri");  
+               break;
+                case 2: 
+                System.out.println("Hasil = Anda kalah"); 
+                break;
+            }
+                 break; 
+                case 2:
+                 System.out.println("Komputer = Batu");
+                     System.out.println(); 
+            switch (player) 
+            {
+                case 0: 
+                System.out.println("Hasil = Anda kalah");
+                 break; 
+                case 1: 
+                System.out.println("Hasil = Anda menang");
+                 break; 
+                case 2:  
+               System.out.println("Hasil = Seri"); 
+                break; 
+            }  
+           break; 
+        }
+     }
+ } 
